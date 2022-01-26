@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab栏切换</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <style>
+        .box {
+            width: 329px;
+            height: 100px;
+            margin: 0;
+            padding: 0;
+        }
+        .nav {
+           
+            height: 30px;
+            background-color: #d5d5d5;
+            padding: 0 ;
+            margin: 0;
+        }
+        .content {
+            height: 50px;
+        }
+        .nav li {
+            float: left;
+           margin: 0;
+           padding: 3px 20px;
+        }
+        ul {
+            list-style: none;
+            height: 30px;
+            padding: 0;
+            margin: 0;
+        }
+        .current {
+            background-color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+         <div class="nav">
+         <ul>
+            <li >商品介绍</li>
+            <li>规格与包装</li>
+            <li>售后保障</li>
+        </ul>
+        </div>
+        <div class="content">
+            <ul>
+                <li>商品介绍内容</li>
+                <li style="display: none;">规格与包装内容</li>
+                <li style="display: none;">售后保障内容</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+       $(function(){
+           $('.nav ul li').click(function(){
+              $(this).addClass('current');
+              $(this).siblings().removeClass('current');
+              var index =$(this).index();
+              $('.content ul li').eq(index).show();
+              $('.content ul li').eq(index).siblings().hide()
+           });
+       });
+       
+    </script>
+</body>
+</html>
