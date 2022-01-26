@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+   <style>
+       ul {
+           list-style: none;
+           padding: 0;
+           margin: 0;
+           
+       }
+       a {
+           text-decoration: none;
+           color: black;
+       }
+       .ul>li {
+           float: left;
+           /* padding: 0 30px; */
+           
+       }
+       .ul {
+           width: 300px;
+           margin: 100px auto;
+       }
+       a {
+           display: block;
+           padding: 0 30px;
+           height: 30px;
+           line-height: 30px;
+       }
+       .ul>li ul li {
+        padding: 0 30px;
+        height: 30px;
+        border: 1px solid orange;
+        line-height: 30px;
+        cursor: pointer;
+       }
+   </style>
+</head>
+<body>
+    <ul class="ul">
+        <li>
+            <a href="#">微博</a>
+            <ul style="display: none;">
+                <li>评论我</li>
+                <li>私信我</li>
+                <li>@我</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">微博</a>
+            <ul style="display: none;">
+                <li>评论我</li>
+                <li>私信我</li>
+                <li>@我</li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+         $(function(){
+             $('ul>li').mouseover(function(){
+                $(this).children('a').css('background','#ccc');
+                 $(this).children('ul').show();
+             });
+             $('ul>li>ul>li').mouseover(function(){
+                $(this).css('background','#ccc');
+                
+             });
+             $('ul>li').mouseout(function(){
+                $(this).children('a').css('background','#fff');
+                 $(this).children('ul').hide();
+             });
+             $('ul>li>ul>li').mouseout(function(){
+                $(this).css('background','#fff');
+                
+             });
+         });
+    </script>
+</body>
+</html>
