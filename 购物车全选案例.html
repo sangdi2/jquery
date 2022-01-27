@@ -302,6 +302,9 @@
              var n =$(this).siblings('.itxt').val();
              n++;
              $(this).siblings('.itxt').val(n);
+             var p =$(this).parents(".p-num").siblings(".p-price").html();
+             p=p.substr(1);
+             $(this).parents('.p-num').siblings(".p-sum").text("￥"+(p*n).toFixed(2));
            });
            $('.decrement').click(function(){
              var n =$(this).siblings('.itxt').val();
@@ -311,6 +314,15 @@
              }
              n--;
              $(this).siblings('.itxt').val(n);
+             var p =$(this).parents(".p-num").siblings(".p-price").html();
+             p=p.substr(1);
+             $(this).parents('.p-num').siblings(".p-sum").text("￥"+(p*n).toFixed(2));
+           });
+           $(".itxt").change(function(){
+              var n=$(this).val();
+              var p =$(this).parents(".p-num").siblings(".p-price").html();
+             p=p.substr(1);
+             $(this).parents('.p-num').siblings(".p-sum").text("￥"+(p*n).toFixed(2));
            });
         });
     </script>
