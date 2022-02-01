@@ -31,7 +31,7 @@ $(function(){
         })
        }
        
-   })
+   });
    $('.fixedtool li').click(function(){
        flag=false;
        $(this).addClass('current');
